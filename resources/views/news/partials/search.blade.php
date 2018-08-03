@@ -1,3 +1,4 @@
+
 <style>
     * {box-sizing: border-box;}
     form {
@@ -15,7 +16,7 @@
         outline: none;
         position: absolute;
         right: 124px;
-        top: 56px;
+        top: 57px;
         transition: .3s linear;
     }
     input:focus {
@@ -37,10 +38,11 @@
         color: #F9F0DA;
     }
 
-</style>
-{{Form::open(['method'=>'get'])}}
 
-    {{Form::text('search',null,['placeholder'=>'Search...'])}}
+</style>
+{{Form::open(['method'=>'get', 'route'=>'live_search'])}}
+
+    {{Form::text('search',null,['class'=>'who','placeholder'=>'Для живого поиска нажмит Enter'])}}
         <button type="submit"></button>
 
 {{Form::close()}}

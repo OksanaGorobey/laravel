@@ -19,6 +19,7 @@
     <script type="text/javascript" src="{{asset("/sublime/js/fancybox-thumbs.js")}}"></script>
     <script type="text/javascript" src="{{asset("/sublime/js/wow.js")}}"></script>
     <script type="text/javascript" src="{{asset("/sublime/js/main.js")}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 

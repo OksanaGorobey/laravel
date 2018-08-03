@@ -3,6 +3,7 @@
 
 @section('content')
 
+
     <div class="bottom_block">
         <div class="container_12">
             <div class="grid_8">

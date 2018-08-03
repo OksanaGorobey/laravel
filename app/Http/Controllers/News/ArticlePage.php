@@ -36,9 +36,9 @@ class ArticlePage extends Controller
         $comm->user_name = Auth::user()->name;
         $comm->user_id = Auth::user()->id;
         $comm->comment = $request->get('message');
-        $cat != 2 ?$comm->active = 0 : $comm->active = 1;
+        $cat != 2 ? $comm->active = 0 : $comm->active = 1;
         $comm->save();
-        return redirect()->back();
+        return redirect()->route('news.art.index',[$cat,$id]);
     }
 
     public function pluslike($page, $id)

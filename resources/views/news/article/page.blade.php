@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{asset("/massively/assets/css/main.css")}}" />
     <noscript><link rel="stylesheet" href="{{asset("/massively/assets/css/noscript.css")}}" /></noscript>
+
 </head>
 <body class="is-loading">
 
@@ -32,6 +33,7 @@
     <nav id="nav">
         <ul class="links">
             @include('news.log')
+            <li><a href="{{ route('news.main') }}">Home</a></li>
         </ul>
         <ul class="icons">
             <li>@include('news.article.partials.search')</li>
@@ -49,7 +51,13 @@
                     ut labore et dolore magna aliqua enim ad minim veniam quis nostrud
                     laboris.</p>
             </header>
-            <img class="image main" src="{{$new->img}}" alt="" />
+            @if( stristr($new->img, 'modnewspic') === FALSE )
+                <img class="image main" src="{{ asset('gallery/'. $new->img.'')}}" alt="" />
+                @else
+
+                <img class="image main" src="{{$new->img}}" alt="" />
+
+            @endif
         </article>
         <footer>
             <div class="box">
@@ -61,32 +69,24 @@
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));}
 
-    var now = setTimeout(function data() {
+
+    var now = setTimeout(function data () {
       var i = getRandomInt(6);
       var n = document.getElementById('now');
-      n.innerHTML = 'Now:'+ i;
+      n.innerHTML = 'Now:' + i;
       now = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
       return i;
     }, 1000);
-//  }
-//  window.onload =function()
-//  {
-///    var now = setTimeout(function data() {
-//      var i = getRandomInt(6);
-//      var n = document.getElementById('now');
-//      n.innerHTML = 'Now:'+ i;
-//      now = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
-//      return i;
-//    }, 1000);
-//    var sum =0;
-//    while(true){ debugger;
-//      var a = document.getElementById('all');
-//      sum += now;
-//      a.innerHTML = 'All:'+ sum;
-//    }
-//
-//  }
-
+  var all = setTimeout(function data () {
+    var i = getRandomInt(6);
+    var a = document.getElementById('all');
+    while (true){
+      sum += i;
+      a.innerHTML = 'All:' + sum;
+    }
+    all = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
+    return i;
+  }, 1000);
 
 
 

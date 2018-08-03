@@ -32,9 +32,8 @@
         color: #F9F0DA;
     }
 </style>
-{{Form::open(['method'=>'get'])}}
+{{Form::open(['method'=>'get','route'=>'live_search'])}}
 
-{{Form::text('search',null,['placeholder'=>'Search...'])}}
+{{Form::text('search',null,['placeholder'=>'Для живого поиска нажмит Enter'])}}
 <button type="submit" class="button special icon fa-search"></button>
-
 {{Form::close()}}

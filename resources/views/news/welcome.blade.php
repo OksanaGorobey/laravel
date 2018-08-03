@@ -5,17 +5,33 @@
 
 
 @section('content')
-    {{--<script>--}}
+    <script>
 
-    {{--var PreventExitPop = true;--}}
+    var PreventExitPop = true;
 
-    {{--function ExitPop() {--}}
-    {{--if (PreventExitPop != false)--}}
-    {{--{ return "WARNING: Куда пошел? стоять!";--}}
-    {{--} }--}}
-    {{--window.onbeforeunload = ExitPop;--}}
-    {{--</script>--}}
+    function ExitPop() {
+    if (PreventExitPop != false)
+    { return "WARNING: Куда пошел? стоять!";
+    } }
+    window.onbeforeunload = ExitPop;
+    </script>
+    <div class="wrapper">
+        <div id="0" class="title animated wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <h2>TоП Комментаторов</h2>
+        <hr class="separator">
+    </div>
+        <nav>
+            <ul>
+                @foreach($comments as $com)
+                <li>{{$com->user_name}}<a href="#"> Комментаторы</a>{{$com->count_id}}<hr class="separator"></li>
+
+
+                @endforeach
+            </ul>
+        </nav>
+    </div>
     <section class="testimonials wrapper">
+
         <div id="0" class="title animated wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
             <h2>Популярное</h2>
             <hr class="separator">

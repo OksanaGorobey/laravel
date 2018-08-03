@@ -19,31 +19,54 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item has-treeview {{active_class(if_route_pattern('admin.*'))}}">
+                    <a href="#" class="nav-link ">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                             Dashboard
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ asset("/admin-lte/index.html")}}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v1</p>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-tree"></i>
+                                <p>
+                                    News
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
                             </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.news')}}" class="nav-link">
+                                        <i class="nav-icon fa fa-circle-o text-info"></i>
+                                        <p>Add news</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.tatop.index')}}" class="nav-link {{active_class(if_route('admin.tatop.index'))}}">
+                                        <i class="nav-icon fa fa-circle-o text-info"></i>
+                                        <p>Add tags & topics</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.admins.index')}}" class="nav-link">
+                            <a href="../../index2.html" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Add Advertisment</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="{{route('admin.admins.index')}}" class="nav-link {{active_class(if_route('admin.admins.index'))}}">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>All users</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ asset("/admin-lte/index3.html")}}" class="nav-link active">
+                        <li class="nav-item ">
+                            <a href="{{route('admin.menu.index')}}" class="nav-link {{active_class(if_route('admin.menu.index'))}}">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Dashboard v3</p>
+                                <p>Add menu</p>
                             </a>
                         </li>
                     </ul>

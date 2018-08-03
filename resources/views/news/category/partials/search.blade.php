@@ -45,9 +45,9 @@
 </style>
 
 <nav class="codrops-demos">
-    {{Form::open(['method'=>'get'])}}
+    {{Form::open(['method'=>'get','route'=>'live_search'])}}
 
-    {{Form::text('search',null,['placeholder'=>'Искать здесь...'])}}
+    {{Form::text('search',null,['placeholder'=>'Для живого поиска нажмит Enter'])}}
     <button type="submit"></button>
 
     {{Form::close()}}

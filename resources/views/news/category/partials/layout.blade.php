@@ -45,10 +45,9 @@
             <div class="grid_12">
                 <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                     <ul class="sf-menu sf-js-enabled sf-arrows">
-                        <li class="current"><a href="/">Home</a></li>
+                        <li class="current"><a href="{{route('news.main')}}">Home</a></li>
                         @include('news.log')
-                        <li><a href="index-3.html">Prices</a></li>
-                        <li><a href="index-4.html">Contacts</a></li>
+                        <li><a href="{{route('news.select')}}">Отфильтровать новости</a></li>
                     </ul>
                 </nav>
             </div>

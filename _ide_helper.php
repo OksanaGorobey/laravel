@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.20 on 2018-05-08 11:37:22.
+ * Generated for Laravel 5.6.20 on 2018-07-30 18:38:30.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1613,7 +1613,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\User|null 
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function user()
@@ -1648,7 +1648,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\User|false 
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -1712,7 +1712,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\User|false 
+         * @return \App\Models\User|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -1774,7 +1774,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\User 
+         * @return \App\Models\User 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -1876,7 +1876,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\User|null 
+         * @return \App\Models\User|null 
          * @static 
          */ 
         public static function getUser()
@@ -1922,7 +1922,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \App\User 
+         * @return \App\Models\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -12988,6 +12988,273 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace HieuLe\Active\Facades { 
+
+    class Active {
+        
+        /**
+         * Update the route and request instances
+         *
+         * @param \Route $route
+         * @param \Request $request
+         * @static 
+         */ 
+        public static function updateInstances($route, $request)
+        {
+            return \HieuLe\Active\Active::updateInstances($route, $request);
+        }
+        
+        /**
+         * Get the active class if the condition is not falsy
+         *
+         * @param $condition
+         * @param string $activeClass
+         * @param string $inactiveClass
+         * @return string 
+         * @static 
+         */ 
+        public static function getClassIf($condition, $activeClass = 'active', $inactiveClass = '')
+        {
+            return \HieuLe\Active\Active::getClassIf($condition, $activeClass, $inactiveClass);
+        }
+        
+        /**
+         * Check if the URI of the current request matches one of the specific URIs
+         *
+         * @param array|string $uris
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkUri($uris)
+        {
+            return \HieuLe\Active\Active::checkUri($uris);
+        }
+        
+        /**
+         * Check if the current URI matches one of specific patterns (using `str_is`)
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkUriPattern($patterns)
+        {
+            return \HieuLe\Active\Active::checkUriPattern($patterns);
+        }
+        
+        /**
+         * Check if one of the following condition is true:
+         * + the value of $value is `false` and the current querystring contain the key $key
+         * + the value of $value is not `false` and the current value of the $key key in the querystring equals to $value
+         * + the value of $value is not `false` and the current value of the $key key in the querystring is an array that
+         * contains the $value
+         *
+         * @param string $key
+         * @param mixed $value
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkQuery($key, $value)
+        {
+            return \HieuLe\Active\Active::checkQuery($key, $value);
+        }
+        
+        /**
+         * Check if the name of the current route matches one of specific values
+         *
+         * @param array|string $routeNames
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRoute($routeNames)
+        {
+            return \HieuLe\Active\Active::checkRoute($routeNames);
+        }
+        
+        /**
+         * Check the current route name with one or some patterns
+         *
+         * @param array|string $patterns
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRoutePattern($patterns)
+        {
+            return \HieuLe\Active\Active::checkRoutePattern($patterns);
+        }
+        
+        /**
+         * Check if the parameter of the current route has the correct value
+         *
+         * @param $param
+         * @param $value
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkRouteParam($param, $value)
+        {
+            return \HieuLe\Active\Active::checkRouteParam($param, $value);
+        }
+        
+        /**
+         * Return 'active' class if current route action match one of provided action names
+         *
+         * @param array|string $actions
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkAction($actions)
+        {
+            return \HieuLe\Active\Active::checkAction($actions);
+        }
+        
+        /**
+         * Check if the current controller class matches one of specific values
+         *
+         * @param array|string $controllers
+         * @return bool 
+         * @static 
+         */ 
+        public static function checkController($controllers)
+        {
+            return \HieuLe\Active\Active::checkController($controllers);
+        }
+        
+        /**
+         * Get the current controller method
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getMethod()
+        {
+            return \HieuLe\Active\Active::getMethod();
+        }
+        
+        /**
+         * Get the current action string
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getAction()
+        {
+            return \HieuLe\Active\Active::getAction();
+        }
+        
+        /**
+         * Get the current controller class
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getController()
+        {
+            return \HieuLe\Active\Active::getController();
+        }
+         
+    }
+ 
+}
+
+namespace Kris\LaravelFormBuilder\Facades { 
+
+    class FormBuilder {
+        
+        /**
+         * Create a Form instance.
+         *
+         * @param string $formClass The name of the class that inherits \Kris\LaravelFormBuilder\Form.
+         * @param array $options|null
+         * @param array $data|null
+         * @return \Form 
+         * @static 
+         */ 
+        public static function create($formClass, $options = array(), $data = array())
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::create($formClass, $options, $data);
+        }
+        
+        /**
+         * 
+         *
+         * @param $items
+         * @param array $options
+         * @param array $data
+         * @return mixed 
+         * @static 
+         */ 
+        public static function createByArray($items, $options = array(), $data = array())
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::createByArray($items, $options, $data);
+        }
+        
+        /**
+         * 
+         *
+         * @param $form
+         * @param $items
+         * @static 
+         */ 
+        public static function buildFormByArray($form, $items)
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::buildFormByArray($form, $items);
+        }
+        
+        /**
+         * Get instance of the empty form which can be modified
+         * Get the plain form class.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getFormClass()
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::getFormClass();
+        }
+        
+        /**
+         * Set the plain form class.
+         *
+         * @param string $class
+         * @static 
+         */ 
+        public static function setFormClass($class)
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::setFormClass($class);
+        }
+        
+        /**
+         * Get instance of the empty form which can be modified.
+         *
+         * @param array $options
+         * @param array $data
+         * @return \Kris\LaravelFormBuilder\Form 
+         * @static 
+         */ 
+        public static function plain($options = array(), $data = array())
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::plain($options, $data);
+        }
+        
+        /**
+         * Set depedencies and options on existing form instance
+         *
+         * @param \Kris\LaravelFormBuilder\Form $instance
+         * @param array $options
+         * @param array $data
+         * @return \Kris\LaravelFormBuilder\Form 
+         * @static 
+         */ 
+        public static function setDependenciesAndOptions($instance, $options = array(), $data = array())
+        {
+            return \Kris\LaravelFormBuilder\FormBuilder::setDependenciesAndOptions($instance, $options, $data);
+        }
+         
+    }
+ 
+}
+
 namespace Collective\Html { 
 
     class FormFacade {
@@ -13625,6 +13892,16 @@ namespace Collective\Html {
         public static function componentCall($method, $parameters)
         {
             return \Collective\Html\FormBuilder::componentCall($method, $parameters);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function customLabel($name, $value, $options = array())
+        {
+            return \Collective\Html\FormBuilder::customLabel($name, $value, $options);
         }
          
     }
@@ -16317,6 +16594,10 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Active extends \HieuLe\Active\Facades\Active {}
+
+    class FormBuilder extends \Kris\LaravelFormBuilder\Facades\FormBuilder {}
 
     class Form extends \Collective\Html\FormFacade {}
 

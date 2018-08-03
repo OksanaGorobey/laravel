@@ -14,8 +14,12 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset("/admin-lte/dist/css/adminlte.min.css")}}">
     <!-- Google Font: Source Sans Pro -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     @yield('head')
+
 </head>
 
 <body class="hold-transition sidebar-mini">

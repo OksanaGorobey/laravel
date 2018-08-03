@@ -3,44 +3,30 @@
     .sub-menu { height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease-in;}
 
 </style>
+
+
 <ul class="menu">
+    @foreach($mf as $m1)
     <li class="menu-item">
-        <a href="#" style="color:rgb(50,75,78)" >Меню</a>
+        <a href="#" style="color:rgb(50,75,78)" >{{$m1->name}}</a>
         <ul class="sub-menu">
-            <li>
-                <a href="#" style="color:rgb(50,75,78)">Это</a>
-            </li>
-            <li>
-                <a href="#" style="color:rgb(50,75,78)">Выпадающее</a>
-            </li>
+            @foreach($ms as $m2)
             <li class="menu-item">
-                <a href="#" style="color:rgb(50,75,78)">Меню</a>
+                <a href="#" style="color:rgb(50,75,78)">{{$m2->name}}</a>
                 <ul class="sub-menu">
+                    @foreach($mt as $m3)
                     <li>
-                        <a href="#" style="color:rgb(50,75,78)">A </a>
+                        <a href="#" style="color:rgb(50,75,78)">{{$m3->name}}</a>
                     </li>
-                    <li>
-                        <a href="#" style="color:rgb(50,75,78)">Это</a>
-                    </li>
-                    <li>
-                        <a href="#" style="color:rgb(50,75,78)">Еще</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" style="color:rgb(50,75,78)">Одно</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="#" style="color:rgb(50,75,78)">Простите </a>
-                            </li>
-                            <li>
-                                <a href="#">Увлеклась</a>
-                            </li>
-                        </ul>
-                    </li>
+                  @endforeach
                 </ul>
             </li>
+                @endforeach
         </ul>
     </li>
+    @endforeach
 </ul>
+
 <script>
   var el = document.getElementsByClassName('menu-item');
   for(var i=0; i<el.length; i++) {
