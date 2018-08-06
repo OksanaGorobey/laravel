@@ -32,7 +32,7 @@
                                     <td>{{$com->id}}</td>
                                     <td>{{$com->user_name}}</td>
                                     <td>{{$com->updated_at}}</td>
-                                    @if($com->active === 1)
+                                    @if($com->active == 1)
                                        <td><p class="one">
                                         <a href="{{route('admin.act', [$com->id])}}"><span class="label">✘</span></a></li>
                                         </p></td>

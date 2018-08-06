@@ -24,7 +24,7 @@ class CommentsControll extends Controller
 
         $com = Comments::findOrFail($id);
 
-        if($com->active === 1) {
+        if($com->active == 1) {
 
             $com->active = 0;
             $com->save();
