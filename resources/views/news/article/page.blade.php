@@ -70,23 +70,42 @@
     return Math.floor(Math.random() * Math.floor(max));}
 
 
-    var now = setTimeout(function data () {
-      var i = getRandomInt(6);
-      var n = document.getElementById('now');
-      n.innerHTML = 'Now:' + i;
-      now = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
-      return i;
-    }, 1000);
-  var all = setTimeout(function data () {
-    var i = getRandomInt(6);
+  var numbers = new Array;
+  function func() {
+    var rand = getRandomInt(6);
+    var n = document.getElementById('now');
+     n.innerHTML = 'Now:' + rand;
+    numbers.push(rand);
+    console.log(rand);
+  }
+  function con() {
+    var all = numbers.reduce((a, b) => a + b, 0);
     var a = document.getElementById('all');
-    while (true){
-      sum += i;
-      a.innerHTML = 'All:' + sum;
-    }
-    all = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
-    return i;
-  }, 1000);
+    a.innerHTML = 'All:' + all;
+    console.log(all);
+  }
+
+  setInterval(con, 5000);
+
+  setInterval(func, 3000);
+
+//    var now = setTimeout(function data () {
+//      var i = getRandomInt(6);
+//      var n = document.getElementById('now');
+//      n.innerHTML = 'Now:' + i;
+//      now = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
+//      return i;
+//    }, 1000);
+//  var all = setTimeout(function data () {
+//    var i = getRandomInt(6);
+//    var a = document.getElementById('all');
+//    while (true){
+//      sum += i;
+//      a.innerHTML = 'All:' + sum;
+//    }
+//    all = setTimeout(data, 3000); //Запускаем через 3 секунд функцию data()
+//    return i;
+//  }, 1000);
 
 
 

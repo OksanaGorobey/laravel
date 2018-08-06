@@ -20,6 +20,7 @@ Route::group(['as'=>'news.', 'namespace'=>'News'],function () {
     Route::get('/article/{numb}/{id}/minuslike', 'ArticlePage@minuslike')->name('minuslike');
     Route::get('tag/{tag}','TagsSearchPage@index')->name('tagpage');
     Route::get('select','Filters@index')->name('select');
+    Route::get('comments/of/{id}','CommentsPage@index')->name('commofuser');
 
 });
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'namespace'=>'Admin', 'middleware'=>'auth'],function (){

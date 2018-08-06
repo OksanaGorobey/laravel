@@ -25,7 +25,7 @@ class News extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id', 'title','article', 'img',
+        'id', 'title','article', 'img', 'category_id'
     ];
 
     /**

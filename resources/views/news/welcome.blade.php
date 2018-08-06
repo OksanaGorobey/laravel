@@ -5,7 +5,23 @@
 
 
 @section('content')
+
+   <style>
+
+       .div1{
+           width: 50%;
+           min-height: 150px;
+           float: left;
+       }
+       .div2{
+           width: 50%;
+           min-height: 150px;
+           margin-left: 55%;
+       }
+   </style>
+
     <script>
+
 
     var PreventExitPop = true;
 
@@ -17,18 +33,40 @@
     </script>
     <div class="wrapper">
         <div id="0" class="title animated wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
-        <h2>TоП Комментаторов</h2>
+        <h2>TоП </h2>
         <hr class="separator">
     </div>
-        <nav>
+
+        <div class="div1"><nav>
+                <ul>
+                    <li><h3>................................................КоМмЕнТаТоРы.......</h3></li>
+                    <hr class="separator">
+                    @foreach($comments as $com)
+                        <li><a href="{{route('news.commofuser',[$com->user_id])}}"><h3>{{$com->name}}  💬</h3></a><hr class="separator"></li>
+
+
+                    @endforeach
+                </ul>
+            </nav></div>
+        <div class="div2"><nav>
             <ul>
-                @foreach($comments as $com)
-                <li>{{$com->user_name}}<a href="#"> Комментаторы</a>{{$com->count_id}}<hr class="separator"></li>
+                <li><h3>........................................................СтАтЬи.......</h3></li>
+                <hr class="separator">
+                <li><a href="#">separator</a></li>
+                <li><a href="#">separator</a></li>
+                <li><a href="#">separator</a></li>
+                <li><a href="#">separator</a></li>
+                <li><a href="#">separator</a></li>
+                <li><a href="#">separator</a></li>
+
+
+                @foreach($articles as $art)
+                    <li><a href="{{route('news.art.index', [$art->category_id,$art->article_id])}}"><h4>{{$art->title}}</h4></a><hr class="separator"></li>
 
 
                 @endforeach
-            </ul>
-        </nav>
+            </ul></nav>
+        </div>
     </div>
     <section class="testimonials wrapper">
 
