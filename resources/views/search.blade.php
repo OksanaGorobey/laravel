@@ -18,8 +18,8 @@
 
     </tbody>
 </table>
-<h2>получить все новости по тегу можно перейдя с самой новости по  тегу)))</h2>
-<h3>Да, это не ссылки:((((</h3>
+<h2>получить все новости по тегу можно перейдя и по  тегу)))</h2>
+
 <a href="{{route('news.main')}}">Home</a>
 <script>
   $(document).ready(function(){
@@ -37,6 +37,7 @@
         {
           $('tbody').html(data.table_data);
           $('#total_records').text(data.total_data);
+         
         }
       })
     }

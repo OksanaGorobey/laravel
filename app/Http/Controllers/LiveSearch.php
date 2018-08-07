@@ -36,7 +36,7 @@ class LiveSearch extends Controller
                 foreach($data as $row)
                 {
 
-                    $output .= "<td>". $row->tag_name ."</td> ";
+                    $output .= "<td><a href='". route('news.tagpage',[$row->id]). "'>". $row->tag_name ."</a></td> ";
                 }
             }
             else
